@@ -58,7 +58,6 @@ function showPosition(position) {
 }
 //
 function showTemperature(response) {
-  console.log(response);
   let temperature = Math.round(response.data.main.temp);
   let description = document.querySelector("p.description");
   description.innerHTML = response.data.weather[0].description;
