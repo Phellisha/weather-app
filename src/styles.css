@@ -61,3 +61,8 @@ button.currentLocation:hover {
 .next-day {
   text-align: center;
 }
+.github {
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 18px;
+}
