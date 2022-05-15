@@ -16,6 +16,13 @@ span.units {
   position: relative;
   top: -8px;
 }
+h3 .units .active {
+  color: black;
+  cursor: default;
+}
+h3 .units .active:hover {
+  text-decoration: none;
+}
 h3 div {
   font-size: 20pt;
 }
