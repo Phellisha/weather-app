@@ -73,6 +73,11 @@ function showTemperature(response) {
   humidity.innerHTML = `Humidity: ${Math.round(response.data.main.humidity)}%`;
   let currentCity = document.querySelector(".current-city");
   currentCity.innerHTML = response.data.name;
+  iconElement = document.querySelector("#weather-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 navigator.geolocation.getCurrentPosition(showPosition);
 
