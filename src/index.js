@@ -40,7 +40,7 @@ function formatDate() {
   let month = months[now.getMonth()];
   let year = now.getFullYear();
   let day = now.getDate();
-  let today = `It is ${weekDay}, ${month} ${day}, ${year} </br> ${hours}:${minutes}`;
+  let today = `${weekDay}, ${month} ${day}, ${hours}:${minutes}`;
   return today;
 }
 let p = document.querySelector("p.date");
@@ -62,11 +62,11 @@ function showTemperature(response) {
   let description = document.querySelector("p.description");
   description.innerHTML = response.data.weather[0].description;
   let currentTemp = document.querySelector("span.now");
-  currentTemp.innerHTML = `${temperature}°f`;
+  currentTemp.innerHTML = `${temperature}`;
   let high = document.querySelector("div.high");
-  high.innerHTML = `High: ${Math.round(response.data.main.temp_max)}°f`;
+  high.innerHTML = `High: ${Math.round(response.data.main.temp_max)}°`;
   let low = document.querySelector("div.low");
-  low.innerHTML = `Low: ${Math.round(response.data.main.temp_min)}°f`;
+  low.innerHTML = `Low: ${Math.round(response.data.main.temp_min)}°`;
   let wind = document.querySelector("div.wind");
   wind.innerHTML = `Wind Speed: ${Math.round(response.data.wind.speed)} mph`;
   let humidity = document.querySelector("div.humidity");

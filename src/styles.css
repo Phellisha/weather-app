@@ -11,6 +11,11 @@ h2 {
 h3 {
   font-size: 25pt;
 }
+span.units {
+  font-size: 16px;
+  position: relative;
+  top: -8px;
+}
 h3 div {
   font-size: 20pt;
 }
