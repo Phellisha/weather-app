@@ -133,3 +133,26 @@ celsiusLink.addEventListener("click", displayCelsius);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Friday", "Saturday", "Sunday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col next-day">
+              <img src="#" alt="" width="20px" /><br />
+              <div class="weather-forecast-high"> <span>H:</span> 44°</div>
+              <div class="weather-forecast-low"> <span>L:</span> 24°</div>
+              <div class="weather-forecast-date">${day}</div>
+            </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
