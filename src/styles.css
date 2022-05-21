@@ -78,3 +78,6 @@ button.currentLocation:hover {
   font-family: Helvetica;
   font-size: 18px;
 }
+.forecast {
+  text-align: center;
+}
