@@ -46,7 +46,6 @@ function formatDate() {
 let p = document.querySelector("p.date");
 p.innerHTML = formatDate();
 
-//
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -56,7 +55,7 @@ function showPosition(position) {
 &appid=${apiKey}&units=${units}`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
-//
+
 function getForecast(coordinates) {
   let apiKey = "de748fd3bf1f61bb45b092b19a2fceca";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
@@ -95,7 +94,6 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
-//
 
 function displayCity(event) {
   event.preventDefault();
@@ -108,38 +106,13 @@ function displayCity(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", displayCity);
-//
+
 function currentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
 let locationButton = document.querySelector("#location");
 locationButton.addEventListener("click", currentPosition);
-
-function displayCelsius(event) {
-  event.preventDefault();
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-  let temperatureElement = document.querySelector("span.now");
-  let celsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-}
-
-function displayFahrenheit(event) {
-  event.preventDefault();
-  fahrenheitLink.classList.add("active");
-  celsiusLink.classList.remove("active");
-  let temperatureElement = document.querySelector("span.now");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
-}
-
-let fahrenheitTemp = null;
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsius);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheit);
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
